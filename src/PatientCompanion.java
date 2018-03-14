@@ -1,5 +1,13 @@
 
 public class PatientCompanion extends HospitalStaff {
+	
+	
+	@Override
+	public String toString() {
+		String print = super.toString();
+		return "Patient Companion [" + print +
+				"]";
+	}
 
 	public PatientCompanion(String name, String surname, Integer id) {
 		super(name, surname, id);

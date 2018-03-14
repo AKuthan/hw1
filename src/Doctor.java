@@ -1,5 +1,13 @@
 
 public class Doctor extends HospitalStaff {
+	
+	
+	@Override
+	public String toString() {
+		String print = super.toString();
+		return "Doctor [" + print +
+				"]";
+	}
 
 	public Doctor(String name, String surname, Integer id) {
 		super(name, surname, id);

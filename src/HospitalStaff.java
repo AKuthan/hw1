@@ -1,5 +1,5 @@
 
-public class HospitalStaff {
+abstract class HospitalStaff {
 	private String name;
 	private String surname;
 	private Integer id;
@@ -35,7 +35,7 @@ public class HospitalStaff {
 	}
 
 	public String toString() {
-		return "HospitalStaff [name=" + name + ", surname=" + surname + ", id="
-				+ id + "]";
+		return "name=" + name + ", surname=" + surname + ", id="
+				+ id ;
 	}
 }

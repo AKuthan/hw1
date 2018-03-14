@@ -3,8 +3,10 @@ public class Patient {
 	private String name;
 	private String surName;
 	private Integer TCKN;
+	private PatientNeeds patientNeeds;
 	
-	public Patient(String name, String surName, Integer tCKN) {
+	public Patient(String name, String surName, Integer tCKN, PatientNeeds patientNeeds) {
+		this.patientNeeds = patientNeeds;
 		this.name = name;
 		this.surName = surName;
 		TCKN = tCKN;
@@ -35,10 +37,19 @@ public class Patient {
 	}
 
 	public String toString() {
-		return "Patient [name=" + name + ", surName=" + surName + ", TCKN="
+		return "Patient [name=" + name + ", surname=" + surName + ", TCKN="
 				+ TCKN + "]";
 	}
 	
+	
+	public PatientNeeds getPatientNeeds() {
+		return patientNeeds;
+	}
+
+	public void setPatientNeeds(PatientNeeds patientNeeds) {
+		this.patientNeeds = patientNeeds;
+	}
+
 	public boolean operation(){
 		return true;
 	}

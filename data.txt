@@ -1,0 +1,6 @@
+Operation%50
+Visit%70
+Medicine%60
+BloodSample%80
+MRI%80
+Xray%79
