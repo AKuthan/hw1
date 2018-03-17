@@ -1,3 +1,8 @@
+package Business;
+
+//210201016 Ahmet Kuthan Temimhan
+//210201008 Caner Karagüler
+//Ceng 431 HW1
 
 public class Doctor extends HospitalStaff {
 	
@@ -13,11 +18,11 @@ public class Doctor extends HospitalStaff {
 		super(name, surname, id);
 	}
 	
-	public boolean performOperation(Patient patient){
-		return patient.operation();
+	public boolean performOperation(Patient patient, Integer probability){
+		return patient.operation(probability);
 	}
-	public boolean performVisit(Patient patient){
-		return patient.visit();
+	public boolean performVisit(Patient patient, Integer probability){
+		return patient.visit(probability);
 	}
 	public boolean dismissFromHospital(){
 		return true;
