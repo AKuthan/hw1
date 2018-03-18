@@ -99,7 +99,7 @@ public class HospitalApp {
 		while(ms.mainMenu()){
 			processCount++;
 		}
-		System.out.println("while loob retuns "+ processCount + "times");
+		System.out.println("while loob retuns "+ processCount + " times");
 		System.exit(1);
 	}
 

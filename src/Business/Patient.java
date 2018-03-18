@@ -16,7 +16,7 @@ public class Patient {
 	private Integer TCKN;
 	private PatientNeeds patientNeeds;
 	private Random rand;
-	private ArrayList<Pair> hospitalHistory;
+	private ArrayList<Pair<PatientNeeds, Boolean>> hospitalHistory;
 	
 	public Patient(String name, String surName, Integer tCKN, PatientNeeds patientNeeds) {
 		setPatientNeeds(patientNeeds);
@@ -24,7 +24,7 @@ public class Patient {
 		setSurName(surName);
 		setTCKN(tCKN);
 		rand = new Random();
-		hospitalHistory = new ArrayList<Pair>();
+		hospitalHistory = new ArrayList<Pair<PatientNeeds, Boolean>>();
 	}
 
 	public String getName() {
@@ -72,7 +72,7 @@ public class Patient {
 		return "Patient [name=" + name + ", surname=" + surName + ", TCKN="
 				+ TCKN + " need= "+ patientNeeds + " ]";
 	}
-	public ArrayList<Pair> getHospitalHistory(){
+	public ArrayList<Pair<PatientNeeds, Boolean>> getHospitalHistory(){
 		return hospitalHistory;
 	}
 	
@@ -88,11 +88,11 @@ public class Patient {
 	public boolean operation(Integer probability){
 		Integer randomNumber = rand.nextInt(100);
 		if (randomNumber > probability){
-			hospitalHistory.add(new Pair(PatientNeeds.Operation, false));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.Operation, false));
 			return false;
 		}
 		else{
-			hospitalHistory.add(new Pair(PatientNeeds.Operation, true));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.Operation, true));
 			patientNeeds = PatientNeeds.values()[rand.nextInt(PatientNeeds.values().length)];
 			return true;
 		}	
@@ -101,11 +101,11 @@ public class Patient {
 	public boolean visit(Integer probability){
 		Integer randomNumber = rand.nextInt(100);
 		if (randomNumber > probability){
-			hospitalHistory.add(new Pair(PatientNeeds.Visit, false));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.Visit, false));
 			return false;
 		}
 		else {
-			hospitalHistory.add(new Pair(PatientNeeds.Visit, true));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.Visit, true));
 			patientNeeds = PatientNeeds.values()[rand.nextInt(PatientNeeds.values().length)];
 			return true;
 		}	
@@ -114,11 +114,11 @@ public class Patient {
 	public boolean takeMedicine(Integer probability){
 		Integer randomNumber = rand.nextInt(100);
 		if (randomNumber > probability){
-			hospitalHistory.add(new Pair(PatientNeeds.Medicine, false));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.Medicine, false));
 			return false;
 		}
 		else {
-			hospitalHistory.add(new Pair(PatientNeeds.Medicine, true));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.Medicine, true));
 			patientNeeds = PatientNeeds.values()[rand.nextInt(PatientNeeds.values().length)];
 			return true;
 		}
@@ -127,11 +127,11 @@ public class Patient {
 	public boolean giveBloodSample(Integer probability){
 		Integer randomNumber = rand.nextInt(100);
 		if (randomNumber > probability){
-			hospitalHistory.add(new Pair(PatientNeeds.BloodSample, false));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.BloodSample, false));
 			return false;
 		}
 		else{
-			hospitalHistory.add(new Pair(PatientNeeds.BloodSample, true));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.BloodSample, true));
 			patientNeeds = PatientNeeds.values()[rand.nextInt(PatientNeeds.values().length)];
 			return true;
 		}
@@ -140,11 +140,11 @@ public class Patient {
 	public boolean goToMRI(Integer probability){
 		Integer randomNumber = rand.nextInt(100);
 		if (randomNumber > probability){
-			hospitalHistory.add(new Pair(PatientNeeds.MRI, false));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.MRI, false));
 			return false;
 		}
 		else {
-			hospitalHistory.add(new Pair(PatientNeeds.MRI, true));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.MRI, true));
 			patientNeeds = PatientNeeds.values()[rand.nextInt(PatientNeeds.values().length)];
 			return true;
 		}
@@ -153,11 +153,11 @@ public class Patient {
 	public boolean goToXRay(Integer probability){
 		Integer randomNumber = rand.nextInt(100);
 		if (randomNumber > probability){
-			hospitalHistory.add(new Pair(PatientNeeds.Xray, false));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.Xray, false));
 			return false;
 		}
 		else {
-			hospitalHistory.add(new Pair(PatientNeeds.Xray, true));
+			hospitalHistory.add(new Pair<PatientNeeds, Boolean>(PatientNeeds.Xray, true));
 			patientNeeds = PatientNeeds.values()[rand.nextInt(PatientNeeds.values().length)];
 			return true;
 		}

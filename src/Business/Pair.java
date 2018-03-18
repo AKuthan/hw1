@@ -4,17 +4,17 @@ package Business;
 //210201008 Caner Karagüler
 //Ceng 431 HW1
 
-public class Pair {
+public class Pair<L, R> {
 
-  private final PatientNeeds pc;
-  private final Boolean b;
+  private final L l;
+  private final R r;
 
-  public Pair(PatientNeeds pc, Boolean b) {
-    this.b = b;
-    this.pc = pc;
+  public Pair(L l, R r) {
+    this.l = l;
+    this.r = r;
   }
   public String toString() {
-	return pc + "," +b;
+	return l + ","+r;
 }	
   
 
